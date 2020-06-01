@@ -129,18 +129,17 @@ USE_L10N = True
 
 USE_TZ = True
 
+# 让Django中自带的user不起作用即可
+AUTH_USER_MODEL = 'user.MyUser'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-# 让Django中自带的user不起作用即可
-AUTH_USER_MODEL = 'user.MyUser'
-
 STATIC_URL = '/static/'
 
 # 设置上线文件夹
-STATIC_ROOT = 'Users/cbw/python/music/music/static'
+STATIC_ROOT = '/Users/cbw/python/music/music/static'
 
 # 设置静态文件
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, '/static/'),]
 
