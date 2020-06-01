@@ -37,6 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'index',
+    'ranking',
+    'user',
+    'play',
+    'search',
+    'comment',
+
 ]
 
 MIDDLEWARE = [
@@ -47,6 +54,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 使用中文
+    # 'django.middleware.locale,LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'music.urls'
@@ -54,7 +63,14 @@ ROOT_URLCONF = 'music.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR,'templates'),
+            os.path.join(BASE_DIR,'index/templates'),
+            os.path.join(BASE_DIR,'ranking/templates'),
+            os.path.join(BASE_DIR,'user/templates'),
+            os.path.join(BASE_DIR,'play/templates'),
+            os.path.join(BASE_DIR,'comment/templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
