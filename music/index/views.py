@@ -6,12 +6,11 @@ def indexView(request):
 
 
     # 设置基本数据
-    search_song = Dynamic.objects.select_related('song').order_by('dynamic_search').all()[:8]
+    search_song = Dynamic.objects.select_related('song').order_by('dynamic_search').all()
 
     label_list = Label.objects.all()
 
     play_hot_song = Dynamic.objects.select_related('song').order_by('dynamic_plays').all()[:10]
-
 
     daily_recommendation = Song.objects.order_by('song_release').all()[:3]
 
@@ -23,8 +22,10 @@ def indexView(request):
 
     # 将所有的local传过去
 
-    # for s in search_song:
-    #     print(s.values())
+
+
+    for s in search_song:
+        print(s)
 
 
 

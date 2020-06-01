@@ -27,7 +27,14 @@
 <h3>search_song</h3>
 <ul>
     {% for s in search_song %}
-     <li></li>
+     <li>
+{#       <h3>{{ s.dynamic__id }}</h3>#}
+        <p>歌曲id:{{ s.song.song_id }} </p>
+        <p>歌曲名称:{{ s.song.song_name }}</p>
+        <p>搜索量:{{ s.dynamic_search }}</p>
+        <p>下载量:{{ s.dynamic_down }}</p>
+        <p>播放量:{{ s.dynamic_plays }}</p>
+     </li>
     {% endfor %}
 
 
