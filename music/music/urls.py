@@ -22,7 +22,8 @@ from play import urls
 from ranking import urls
 from search import urls
 from user import urls
-
+from django.views import static
+from django.conf import settings
 
 
 urlpatterns = [
@@ -34,4 +35,12 @@ urlpatterns = [
     path('search/', include('search.urls')),
     path('user/', include('user.urls')),
 
+    url('^static/(?P<path>.*)$', static.serve,
+            {'document_root': settings.STATIC_ROOT}, name='static')
+
 ]
+
+# 设置404、500错误状态码
+from index import views
+handler404 = views.page_not_found
+handler500 = views.page_not_found
