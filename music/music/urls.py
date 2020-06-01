@@ -26,18 +26,31 @@ from django.views import static
 from django.conf import settings
 
 
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('', include('index.urls')),
+#     path('ranking.html/', include('ranking.urls')),
+#     path('play/', include('play.urls')),
+#     path('comment/', include('comment.urls')),
+#     path('search/', include('search.urls')),
+#     path('user/', include('user.urls')),
+#
+#     url('^static/(?P<path>.*)$', static.serve,
+#             {'document_root': settings.STATIC_ROOT}, name='static')
+#
+# ]
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('index.urls')),
-    path('ranking.html/', include('ranking.urls')),
+    path('ranking.html', include('ranking.urls')),
     path('play/', include('play.urls')),
     path('comment/', include('comment.urls')),
     path('search/', include('search.urls')),
     path('user/', include('user.urls')),
-
+    # 设置项目上线的静态资源路径
     url('^static/(?P<path>.*)$', static.serve,
-            {'document_root': settings.STATIC_ROOT}, name='static')
-
+        {'document_root': settings.STATIC_ROOT}, name='static')
 ]
 
 # 设置404、500错误状态码

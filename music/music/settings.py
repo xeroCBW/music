@@ -25,7 +25,7 @@ SECRET_KEY = '-gqzmt*wf(4oi!(&q1uwg+k8iwfmmr6pd9wyurx3w*mq1xxxqt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -133,9 +133,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
+# 让Django中自带的user不起作用即可
+AUTH_USER_MODEL = 'user.MyUser'
+
 STATIC_URL = '/static/'
+
+# 设置上线文件夹
+STATIC_ROOT = 'Users/cbw/python/music/music/static'
+
 # 设置静态文件
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 
-# 让Django中自带的user不起作用即可
-AUTH_USER_MODEL = 'user.MyUser'
