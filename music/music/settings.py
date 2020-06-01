@@ -136,3 +136,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # 设置静态文件
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
+
+# 让Django中自带的user不起作用即可
+AUTH_USER_MODEL = 'user.MyUser'
