@@ -29,7 +29,7 @@ class Song(models.Model):
 
 class Dynamic(models.Model):
 
-    dynamic_plays = models.AutoField('序号',primary_key=True)
+    dynamic_id = models.AutoField('序号',primary_key=True)
     song = models.ForeignKey(Song,on_delete=models.CASCADE,verbose_name='歌名')
 
     dynamic_plays = models.IntegerField('播放次数')

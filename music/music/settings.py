@@ -138,8 +138,10 @@ AUTH_USER_MODEL = 'user.MyUser'
 STATIC_URL = '/static/'
 
 # 设置上线文件夹
-STATIC_ROOT = '/Users/cbw/python/music/music/static'
+# STATIC_ROOT = '/Users/cbw/python/music/music/static/'
 
 # 设置静态文件
-STATICFILES_DIRS = [os.path.join(BASE_DIR, '/static/'),]
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, '/static/'),]
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 

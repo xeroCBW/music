@@ -334,7 +334,7 @@ model</ColNames>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
     </foreign-key>
-    <column id="81" parent="14" name="id">
+    <column id="81" parent="14" name="dynamic_id">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
@@ -365,7 +365,7 @@ model</ColNames>
       <ColumnCollations></ColumnCollations>
     </index>
     <key id="87" parent="14">
-      <ColNames>id</ColNames>
+      <ColNames>dynamic_id</ColNames>
       <Primary>1</Primary>
     </key>
     <foreign-key id="88" parent="14">
